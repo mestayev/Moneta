@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; // Убедитесь, что подключили этот файл
 import { RotatingLines } from 'react-loader-spinner';
+import oral from './Orol.png'
+import reshka from './Reshka.png'
 
 function CoinFlip() {
   const [result, setResult] = useState(null); // Результат подбрасывания монеты
@@ -93,7 +95,7 @@ function CoinFlip() {
               Результат: {result}
             </div>
          <div className='flex justify-center'>   {
-              result == 'Орел' ? <img src="http://castlots.org/img/ru_reshka.png" alt="" /> : <img src="http://castlots.org/img/ru_orel.png" alt="" />
+              result == 'Орел' ? <img src={reshka} alt="reshka" className='w-[300px] h-[300px]' /> : <img src={oral} alt="oral" className='w-[300px] h-[300px]' />
             }</div>
           </>
 
