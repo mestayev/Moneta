@@ -34,9 +34,9 @@ function CoinFlip() {
   // Обработчик события нажатия клавиш
   useEffect(() => {
     const handleKeyPress = (event) => {
-      if (event.key === 'o' || event.key === 'O') {
+      if (event.key === 'o' || event.key === '') {
         flipCoin('Орел'); // Если нажата клавиша 'O', то выпадет "Орел"
-      } else if (event.key === 'r' || event.key === 'R') {
+      } else if (event.key === 'r' || event.key === '') {
         flipCoin('Решка'); // Если нажата клавиша 'R', то выпадет "Решка"
       }
     };
