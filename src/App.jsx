@@ -22,7 +22,7 @@ function CoinFlip() {
       setIsFlipping(false); // Завершаем вращение монеты
       setFlipClass(""); // Останавливаем анимацию вращения
       setLoading(false)
-    },500); // Задержка, которая совпадает с длительностью анимации
+    }, 500); // Задержка, которая совпадает с длительностью анимации
   };
 
   // Функция для случайного выбора между Орел и Решка
@@ -50,10 +50,9 @@ function CoinFlip() {
     };
   }, []); // Эффект с пустым массивом зависимостей будет выполнен один раз при монтировании компонента
 
-  // if (loading) return
 
   return (
-    <div style={{ textAlign: 'center', padding: '50px', fontWeight: 'bold', paddingTop:'200px' }}>
+    <div style={{ textAlign: 'center', padding: '50px', fontWeight: 'bold', paddingTop: '200px' }}>
       <h1>Бросание монетки</h1>
 
       <div style={{ marginBottom: '20px', fontSize: '18px' }}>
@@ -74,32 +73,34 @@ function CoinFlip() {
         Случайный выбор
       </button>
 
-      {/* Показываем результат подбрасывания */}
 
-        {
-          loading ?  <div className='flex justify-center mt-[150px]'>
-            <RotatingLines
-          visible={true}
-          height="96"
-          width="96"
-          color="red"
-          strokeWidth="5"
-          animationDuration="0.75"
-          ariaLabel="rotating-lines-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
-          </div> : result && (
+      {
+        loading ? <div className='flex justify-center mt-[150px]'>
+          <RotatingLines
+            visible={true}
+            height="96"
+            width="96"
+            strokeColor="gray"  // Задаем серый цвет для линий
+            strokeWidth="5"
+            animationDuration="0.75"
+            ariaLabel="rotating-lines-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+
+
+
+        </div> : result && (
           <>
             <div className={`result ${result ? 'show' : ''}`} style={{ marginTop: '20px', fontSize: '24px', fontWeight: 'bold' }}>
               Результат: {result}
             </div>
-         <div className='flex justify-center'>   {
+            <div className='flex justify-center'>   {
               result == 'Орел' ? <img src={reshka} alt="reshka" className='w-[300px] h-[300px]' /> : <img src={oral} alt="oral" className='w-[300px] h-[300px]' />
             }</div>
           </>
 
-      )}
+        )}
     </div>
   );
 }
