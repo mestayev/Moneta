@@ -96,7 +96,7 @@ function CoinFlip() {
               Результат: {result}
             </div>
             <div className='flex justify-center'>   {
-              result == 'Орел' ? <img src={reshka} alt="reshka" className='w-[300px] h-[300px]' /> : <img src={oral} alt="oral" className='w-[300px] h-[300px]' />
+              result == 'Орел' ? <img src={oral} alt="reshka" className='w-[300px] h-[300px]' /> : <img src={reshka} alt="oral" className='w-[300px] h-[300px]' />
             }</div>
           </>
 
