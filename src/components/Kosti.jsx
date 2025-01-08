@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Kosti() {
   const [diceCount, setDiceCount] = useState(1); // Количество костей
-  const [results, setResults] = useState([1]); // Результаты броска костей
+  const [results, setResults] = useState([6]); // Результаты броска костей
   const [isSpinning, setIsSpinning] = useState(false); // Флаг для анимации "рандомной крутки"
 
   // Увеличить количество костей
