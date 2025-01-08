@@ -1,0 +1,79 @@
+/* src/components/Footer.css */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    opacity: 0;
+    animation: fadeIn 3s forwards; /* Плавная анимация появления */
+  }
+  
+  /* Эффект плавного появления текста */
+  .footer-text {
+    margin: 10px 0;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeInText 3s forwards;
+  }
+  
+  /* Задержки для каждого абзаца текста */
+  .footer-text:nth-child(1) {
+    animation-delay: 0.5s; /* Задержка для первого абзаца */
+  }
+  
+  .footer-text:nth-child(2) {
+    animation-delay: 1s; /* Задержка для второго абзаца */
+  }
+  
+  .footer-text:nth-child(3) {
+    animation-delay: 1.5s; /* Задержка для третьего абзаца */
+  }
+  
+  .footer-text:nth-child(4) {
+    animation-delay: 2s; /* Задержка для четвертого абзаца */
+  }
+  
+  .footer-text:nth-child(5) {
+    animation-delay: 2.5s; /* Задержка для пятого абзаца */
+  }
+  
+  .footer-text:nth-child(6) {
+    animation-delay: 3s; /* Задержка для шестого абзаца */
+  }
+  
+  .footer-text:nth-child(7) {
+    animation-delay: 3.5s; /* Задержка для седьмого абзаца */
+  }
+  
+  .footer-text:nth-child(8) {
+    animation-delay: 4s; /* Задержка для восьмого абзаца */
+  }
+  
+  /* Анимация для появления */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Плавное появление текста */
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
