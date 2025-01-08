@@ -9,7 +9,7 @@ function Kosti() {
   const addDice = () => {
     if (diceCount < 6) {
       setDiceCount(diceCount + 1);
-      setResults([...results, 1]); // Добавляем новую кость с результатом 1
+      setResults([...results, 6]); // Добавляем новую кость с результатом 1
     }
   };
 
