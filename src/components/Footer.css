@@ -10,6 +10,30 @@
     font-family: 'Arial', sans-serif;
     opacity: 0;
     animation: fadeIn 3s forwards; /* Плавная анимация появления */
+    transition: height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Плавное изменение высоты и прозрачности */
+  }
+  
+  .footer.hidden {
+    height: 0;
+    padding: 0;
+    opacity: 0; /* Прячем футер */
+  }
+  
+  /* Стиль для кнопки закрытия (крестик) */
+  .footer-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-close-button:hover {
+    transform: scale(1.2); /* Увеличение кнопки при наведении */
   }
   
   /* Эффект плавного появления текста */
@@ -22,35 +46,28 @@
   
   /* Задержки для каждого абзаца текста */
   .footer-text:nth-child(1) {
-    animation-delay: 0.5s; /* Задержка для первого абзаца */
+    animation-delay: 0.5s;
   }
-  
   .footer-text:nth-child(2) {
-    animation-delay: 1s; /* Задержка для второго абзаца */
+    animation-delay: 1s;
   }
-  
   .footer-text:nth-child(3) {
-    animation-delay: 1.5s; /* Задержка для третьего абзаца */
+    animation-delay: 1.5s;
   }
-  
   .footer-text:nth-child(4) {
-    animation-delay: 2s; /* Задержка для четвертого абзаца */
+    animation-delay: 2s;
   }
-  
   .footer-text:nth-child(5) {
-    animation-delay: 2.5s; /* Задержка для пятого абзаца */
+    animation-delay: 2.5s;
   }
-  
   .footer-text:nth-child(6) {
-    animation-delay: 3s; /* Задержка для шестого абзаца */
+    animation-delay: 3s;
   }
-  
   .footer-text:nth-child(7) {
-    animation-delay: 3.5s; /* Задержка для седьмого абзаца */
+    animation-delay: 3.5s;
   }
-  
   .footer-text:nth-child(8) {
-    animation-delay: 4s; /* Задержка для восьмого абзаца */
+    animation-delay: 4s;
   }
   
   /* Анимация для появления */

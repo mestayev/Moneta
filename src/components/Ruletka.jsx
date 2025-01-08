@@ -58,6 +58,21 @@ function Ruletka() {
       {result && <h2>Результат: {result}</h2>}
     </div>
   );
+
+
+
+
+
+//   <footer className="footer">
+//   <p className="footer-text">&copy; 2025 Все права защищены</p>
+//   <p className="footer-text">Сайт создан для развлечений</p>
+//   <p className="footer-text">Контактная информация: infot@Funchoose.com</p>
+//   <p className="footer-text">Наши партнеры: GameTech, FunFactory, PlayWorld</p>
+//   <p className="footer-text">Политика конфиденциальности</p>
+//   <p className="footer-text">Условия использования</p>
+//   <p className="footer-text">Поддержка: support@Funchoose.com</p>
+//   <p className="footer-text">Версия сайта: 1.0.0</p>
+// </footer>
 }
 
 export default Ruletka;

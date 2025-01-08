@@ -1,4 +1,3 @@
-// src/pages/Monetochka.jsx
 import React, { useState, useEffect } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import oral from "./Orol.png"; // Убедитесь, что файл находится в той же папке
@@ -79,7 +78,7 @@ function Monetochka() {
                 style={{
                   ...styles.coinImage,
                   transform: `rotate(${rotation}deg)`, // Вращение монеты
-                  animation: "flip 1.5s ease-out", // Плавное вращение
+                  animation: "flip-up 1.5s ease-out", // Плавное поднимание
                 }}
               />
             </div>
@@ -88,10 +87,15 @@ function Monetochka() {
 
         <style>
           {`
-            @keyframes flip {
-              0% { transform: rotateY(0); opacity: 0; }
-              50% { transform: rotateY(180deg); opacity: 0.7; }
-              100% { transform: rotateY(360deg); opacity: 1; }
+            @keyframes flip-up {
+              0% { transform: translateY(0) rotateY(0); opacity: 0; }
+              50% { transform: translateY(-50px) rotateY(180deg); opacity: 0.7; }
+              100% { transform: translateY(0) rotateY(360deg); opacity: 1; }
+            }
+            @keyframes move-up {
+              0% { transform: translateY(0); }
+              50% { transform: translateY(-50px); }
+              100% { transform: translateY(0); }
             }
           `}
         </style>
@@ -118,7 +122,8 @@ const styles = {
     fontSize: "3rem",
     color: "#555",
     textShadow: "4px 4px 8px rgba(0, 0, 0, 0.2)",
-    marginBottom: "20px", // Уменьшаем отступ
+    marginBottom: "30px", // Увеличиваем отступ, чтобы текст был выше
+    animation: "move-up 1.5s ease-out", // Анимация для текста
   },
   button: {
     padding: "12px 25px",
@@ -130,6 +135,7 @@ const styles = {
     borderRadius: "10px",
     cursor: "pointer",
     transition: "background-color 0.3s ease, transform 0.3s ease",
+    animation: "move-up 1.5s ease-out", // Анимация для кнопки
   },
   loaderContainer: {
     marginTop: "20px",
