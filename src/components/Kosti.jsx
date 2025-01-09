@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function Kosti() {
   const [diceCount, setDiceCount] = useState(1); // Количество костей
@@ -9,7 +9,7 @@ function Kosti() {
   const addDice = () => {
     if (diceCount < 6) {
       setDiceCount(diceCount + 1);
-      setResults([...results, 6]); // Добавляем новую кость с результатом 1
+      setResults([...results, 6]); // Добавляем новую кость с результатом 6
     }
   };
 
@@ -31,28 +31,6 @@ function Kosti() {
       setIsSpinning(false);
     }, spinDuration);
   };
-
-  // Скрытая функция Alt+1...Alt+6
-  const handleKeyDown = (event) => {
-    if (event.altKey) {
-      const number = parseInt(event.key, 10);
-      if (!isNaN(number) && number >= 1 && number <= 6 && diceCount === 1) {
-        setIsSpinning(true);  // Включаем анимацию крутки
-        setTimeout(() => {
-          setResults([number]); // Устанавливаем результат для одной кости после небольшой задержки
-          setIsSpinning(false);
-        }, 300); // Задержка для крутки
-      }
-    }
-  };
-
-  // Подключаем глобальный обработчик событий
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [diceCount]);
 
   return (
     <div style={styles.container}>
