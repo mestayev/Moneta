@@ -9,7 +9,7 @@ function Kosti() {
   const addDice = () => {
     if (diceCount < 6) {
       setDiceCount(diceCount + 1);
-      setResults([...results, 6]); // Добавляем новую кость с результатом 1
+      setResults([...results, 6]); // Добавляем новую кость с результатом 6
     }
   };
 
@@ -32,16 +32,96 @@ function Kosti() {
     }, spinDuration);
   };
 
-  // Скрытая функция Alt+1...Alt+6
+  // Скрытая функция Alt+1...Alt+6, Alt+Q, Alt+W, Alt+E, Alt+R, Alt+A и Alt+S
   const handleKeyDown = (event) => {
     if (event.altKey) {
       const number = parseInt(event.key, 10);
+
+      // Alt + число для одной кости
       if (!isNaN(number) && number >= 1 && number <= 6 && diceCount === 1) {
-        setIsSpinning(true);  // Включаем анимацию крутки
+        setIsSpinning(true); // Включаем анимацию крутки
         setTimeout(() => {
           setResults([number]); // Устанавливаем результат для одной кости после небольшой задержки
           setIsSpinning(false);
         }, 300); // Задержка для крутки
+      }
+
+      // Alt + Q для 4 костей
+      if (event.key.toLowerCase() === "q" && diceCount === 4) {
+        setIsSpinning(true);
+        setTimeout(() => {
+          const dice1 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice2 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice3 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice4 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          setResults([dice1, dice2, dice3, dice4]);
+          setIsSpinning(false);
+        }, 300);
+      }
+
+      // Alt + W для 4 костей
+      if (event.key.toLowerCase() === "w" && diceCount === 4) {
+        setIsSpinning(true);
+        setTimeout(() => {
+          const dice1 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice2 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice3 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice4 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          setResults([dice1, dice2, dice3, dice4]);
+          setIsSpinning(false);
+        }, 300);
+      }
+
+      // Alt + E для 4 костей
+      if (event.key.toLowerCase() === "e" && diceCount === 4) {
+        setIsSpinning(true);
+        setTimeout(() => {
+          const dice1 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice2 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice3 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice4 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          setResults([dice1, dice2, dice3, dice4]);
+          setIsSpinning(false);
+        }, 300);
+      }
+
+      // Alt + R для 4 костей
+      if (event.key.toLowerCase() === "a" && diceCount === 4) {
+        setIsSpinning(true);
+        setTimeout(() => {
+          const dice1 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice2 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice3 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice4 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          setResults([dice1, dice2, dice3, dice4]);
+          setIsSpinning(false);
+        }, 300);
+      }
+
+      // Alt + A для 4 костей
+      if (event.key.toLowerCase() === "s" && diceCount === 4) {
+        setIsSpinning(true);
+        setTimeout(() => {
+          const dice1 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice2 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice3 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice4 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          setResults([dice1, dice2, dice3, dice4]);
+          setIsSpinning(false);
+        }, 300);
+      }
+
+      // Alt + S для 4 костей
+      if (event.key.toLowerCase() === "d" && diceCount === 4) {
+        setIsSpinning(true);
+        setTimeout(() => {
+          const dice1 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice2 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          const dice3 = Math.ceil(Math.random() * 3); // 1, 2 или 3
+          const dice4 = Math.ceil(Math.random() * 3) + 3; // 4, 5 или 6
+          setResults([dice1, dice2, dice3, dice4]);
+          setIsSpinning(false);
+        }, 300);
       }
     }
   };
