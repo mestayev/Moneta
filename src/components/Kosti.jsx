@@ -112,7 +112,7 @@ function Kosti() {
       }
 
       // Alt + S для 4 костей
-      if (event.key.toLowerCase() === "d" && diceCount === 4) {
+      if (event.key.toLowerCase() === "z" && diceCount === 4) {
         setIsSpinning(true);
         setTimeout(() => {
           const dice1 = Math.ceil(Math.random() * 3); // 1, 2 или 3
