@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import oral from "./Orol.png"; // Убедитесь, что файл находится в той же папке
 import reshka from "./Reshka.png"; // Убедитесь, что файл находится в той же папке
@@ -23,6 +23,25 @@ function Monetochka() {
       setIsFlipping(false); // Останавливаем вращение
     }, 1500); // Задержка 1.5 секунды для имитации вращения
   };
+
+  // Обработчик клавиш
+  const handleKeyDown = (event) => {
+    if (event.key === "r" || event.key === "R") {
+      flipCoin("Решка");
+    } else if (event.key === "o" || event.key === "O") {
+      flipCoin("Орел");
+    }
+  };
+
+  // Подключаем обработчик клавиатуры
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Удаляем обработчик при размонтировании компонента
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className="">
