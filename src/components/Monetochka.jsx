@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
-import oral from "./Orol.png"; // Убедитесь, что файл находится в той же папке
-import reshka from "./Reshka.png"; // Убедитесь, что файл находится в той же папке
-
+import oral from "./Orol.png";
+import reshka from "./Reshka.png"; 
 function Monetochka() {
   const [result, setResult] = useState(null); // Результат подбрасывания монеты
   const [isFlipping, setIsFlipping] = useState(false); // Статус вращения монеты
@@ -88,7 +87,7 @@ function Monetochka() {
 const styles = {
   container: {
     textAlign: "center",
-    paddingTop: "80px", // Увеличиваем отступ сверху, чтобы не перекрывать navbar
+    paddingTop: "10px", // Увеличиваем отступ сверху, чтобы не перекрывать navbar
     marginTop: "40px", // Убираем отрицательный отступ
     fontFamily: "'Roboto', sans-serif",
     background: "linear-gradient(to top, #ffefba, #ffffff)",
@@ -103,10 +102,11 @@ const styles = {
     fontSize: "3rem",
     color: "#555",
     textShadow: "4px 4px 8px rgba(0, 0, 0, 0.2)",
-    marginBottom: "30px", // Увеличиваем отступ, чтобы текст был выше
+    marginBottom: "850px", // Увеличиваем отступ, чтобы текст был выше
     animation: "move-up 1.5s ease-out", // Анимация для текста
   },
   button: {
+    marginTop: "-800px",
     padding: "12px 25px",
     fontSize: "1.2rem",
     fontWeight: "bold",
@@ -119,7 +119,7 @@ const styles = {
     animation: "move-up 1.5s ease-out", // Анимация для кнопки
   },
   loaderContainer: {
-    marginTop: "20px",
+    marginTop: "220px",
     transition: "opacity 0.3s ease-in-out",
   },
   resultContainer: {
